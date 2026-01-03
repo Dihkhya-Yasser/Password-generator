@@ -103,20 +103,23 @@ while True:
                     else:
                         with open("passwords.txt", "r") as f:
                             lines = f.readlines()
-                            new_lines = ""
+                            new_lines = []
                             for line in lines:
                                 name_pass = line.split(":")[0].strip()
                                 if name_pass == name_pass_r:
                                     continue
                                 else:
-                                    new_lines += line
+                                    new_lines.append(line)
                             if new_lines == lines:
                                 print("This password is not found")
                                 print("Check the name of password")
                                 continue
                             else:
+                                new_liness = ""
+                                for x in new_lines:
+                                    new_liness += x
                                 with open("passwords.txt", "w") as f:
-                                    f.write(new_lines)
+                                    f.write(new_liness)
                                 print("Congratulation, the password is removed")
                                 break
             elif opr == "2":
@@ -172,4 +175,5 @@ while True:
         break
     else:
         print("Invalid input: This service is not available")
+
         continue
