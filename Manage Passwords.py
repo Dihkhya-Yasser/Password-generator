@@ -175,5 +175,4 @@ while True:
         break
     else:
         print("Invalid input: This service is not available")
-
         continue
